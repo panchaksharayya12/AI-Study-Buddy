@@ -1,0 +1,253 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="100%" height="640" fill="none">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <linearGradient id="accentBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+
+    <linearGradient id="accentGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+
+    <linearGradient id="accentPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+
+    <pattern id="diagGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#FFFFFF" stroke-opacity="0.02" stroke-width="1"/>
+    </pattern>
+
+    <style>
+      .flow-path {
+        stroke-dasharray: 6 4;
+        animation: flowDash 15s linear infinite;
+      }
+      @keyframes flowDash {
+        to { stroke-dashoffset: -100; }
+      }
+    </style>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="640" rx="16" fill="#0B0F17"/>
+  <rect width="1200" height="640" rx="16" fill="url(#diagGrid)"/>
+  <rect x="2" y="2" width="1196" height="636" rx="14" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1.5"/>
+
+  <!-- Diagram Title Header -->
+  <g transform="translate(60, 45)">
+    <text font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" letter-spacing="-0.5">
+      SYSTEM ARCHITECTURE AND COGNITIVE PIPELINE
+    </text>
+    <text font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#64748B" y="20">
+      Decoupled reactive client architecture powered by client-side intelligence and state persistence
+    </text>
+  </g>
+
+  <!-- Status Indicator in Header -->
+  <g transform="translate(1010, 40)">
+    <rect width="130" height="26" rx="13" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <circle cx="16" cy="13" r="4" fill="#10B981"/>
+    <text x="28" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#CBD5E1">CLIENT-FIRST</text>
+  </g>
+
+  <!-- ==================== COLUMN 1: PRESENTATION LAYER ==================== -->
+  <g transform="translate(50, 100)">
+    <rect width="250" height="490" rx="14" fill="url(#cardBg)" stroke="#334155" stroke-width="1"/>
+    <rect x="16" y="16" width="218" height="34" rx="8" fill="#1E293B" stroke="#475569" stroke-width="0.8"/>
+    <text x="28" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#F8FAFC" letter-spacing="0.5">1. PRESENTATION LAYER</text>
+
+    <!-- Component Box 1: Cinematic Hero & Pages -->
+    <g transform="translate(16, 65)">
+      <rect width="218" height="85" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">Cinematic Views</text>
+      <text x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Dual Video Seamless Loops</text>
+      <text x="14" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• RequestAnimationFrame Fader</text>
+      <text x="14" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Single Glass Top Navigation</text>
+    </g>
+
+    <!-- Component Box 2: 3D Flashcards & Study Studio -->
+    <g transform="translate(16, 165)">
+      <rect width="218" height="85" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">Interactive Studio</text>
+      <text x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• 3D CSS Perspective Cards</text>
+      <text x="14" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Circular SVG Canvas Rings</text>
+      <text x="14" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Socratic Chat Dialogue UI</text>
+    </g>
+
+    <!-- Component Box 3: Procedural Audio Engine -->
+    <g transform="translate(16, 265)">
+      <rect width="218" height="85" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">Audio &amp; Animation</text>
+      <text x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Procedural Web Audio API</text>
+      <text x="14" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Zero Asset Audio Latency</text>
+      <text x="14" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Canvas Confetti Celebration</text>
+    </g>
+
+    <!-- Component Box 4: Typography Stack -->
+    <g transform="translate(16, 365)">
+      <rect width="218" height="105" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">Neo-Grotesque System</text>
+      <text x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Headings: Outfit (900/800)</text>
+      <text x="14" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• UI: Plus Jakarta Sans</text>
+      <text x="14" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Code/Numbers: Space Grotesk</text>
+      <text x="14" y="94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#10B981">✓ Zero Serif Footprint</text>
+    </g>
+  </g>
+
+  <!-- Connectors from Layer 1 to Layer 2 -->
+  <line x1="300" y1="210" x2="350" y2="210" stroke="#6366F1" stroke-width="2" class="flow-path"/>
+  <polygon points="350,210 342,206 342,214" fill="#6366F1"/>
+  <line x1="300" y1="360" x2="350" y2="360" stroke="#06B6D4" stroke-width="2" class="flow-path"/>
+  <polygon points="350,360 342,356 342,364" fill="#06B6D4"/>
+
+  <!-- ==================== COLUMN 2: REACTIVE STATE HUB ==================== -->
+  <g transform="translate(350, 100)">
+    <rect width="250" height="490" rx="14" fill="url(#cardBg)" stroke="#334155" stroke-width="1"/>
+    <rect x="16" y="16" width="218" height="34" rx="8" fill="#1E293B" stroke="#475569" stroke-width="0.8"/>
+    <text x="28" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#F8FAFC" letter-spacing="0.5">2. REACTIVE STATE HUB</text>
+
+    <!-- Context 1: StudyDataContext -->
+    <g transform="translate(16, 65)">
+      <rect width="218" height="120" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#6366F1">StudyDataContext</text>
+      <text x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Materials &amp; Chapter Catalog</text>
+      <text x="14" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• 3D Flashcard State &amp; Reviews</text>
+      <text x="14" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Adaptive Quiz Bank &amp; Scoring</text>
+      <text x="14" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Study Tasks &amp; Milestones</text>
+      <text x="14" y="108" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Editable Smart Notes</text>
+    </g>
+
+    <!-- Context 2: ThemeContext -->
+    <g transform="translate(16, 200)">
+      <rect width="218" height="85" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#8B5CF6">ThemeContext</text>
+      <text x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Procedural Sound Mute Toggle</text>
+      <text x="14" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Reduced Motion Accessibility</text>
+      <text x="14" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Cinematic Theme Orchestration</text>
+    </g>
+
+    <!-- Context 3: AuthContext -->
+    <g transform="translate(16, 300)">
+      <rect width="218" height="85" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#06B6D4">AuthContext</text>
+      <text x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• User Profile &amp; Avatar State</text>
+      <text x="14" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Local Session Tokens</text>
+      <text x="14" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Gemini API Key Vault</text>
+    </g>
+
+    <!-- Persistent Storage Bar -->
+    <g transform="translate(16, 400)">
+      <rect width="218" height="70" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+      <text x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#CBD5E1">LocalStorage Persistence</text>
+      <text x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Zero Cloud Dependency Option</text>
+      <text x="14" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Instant Sync &amp; Hydration</text>
+    </g>
+  </g>
+
+  <!-- Connectors from Layer 2 to Layer 3 -->
+  <line x1="600" y1="210" x2="650" y2="210" stroke="#8B5CF6" stroke-width="2" class="flow-path"/>
+  <polygon points="650,210 642,206 642,214" fill="#8B5CF6"/>
+  <line x1="600" y1="360" x2="650" y2="360" stroke="#10B981" stroke-width="2" class="flow-path"/>
+  <polygon points="650,360 642,356 642,364" fill="#10B981"/>
+
+  <!-- ==================== COLUMN 3: SYNTHESIS & AI INTELLIGENCE ==================== -->
+  <g transform="translate(650, 100)">
+    <rect width="250" height="490" rx="14" fill="url(#cardBg)" stroke="#334155" stroke-width="1"/>
+    <rect x="16" y="16" width="218" height="34" rx="8" fill="#1E293B" stroke="#475569" stroke-width="0.8"/>
+    <text x="28" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#F8FAFC" letter-spacing="0.5">3. AI SYNTHESIS ENGINE</text>
+
+    <!-- Gemini Pro REST API -->
+    <g transform="translate(16, 65)">
+      <rect width="218" height="95" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#06B6D4">Gemini Pro API</text>
+      <text x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Direct Client REST Stream</text>
+      <text x="14" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Socratic Prompting Templates</text>
+      <text x="14" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Conceptual Proof Dissections</text>
+      <text x="14" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Multi-Turn Dialogue Memory</text>
+    </g>
+
+    <!-- Offline Rule-based Heuristic Synthesizer -->
+    <g transform="translate(16, 175)">
+      <rect width="218" height="110" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#10B981">Local Heuristic Fallback</text>
+      <text x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Offline Concept Synthesis</text>
+      <text x="14" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Keyword Extraction Rules</text>
+      <text x="14" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Flashcard Generator Rules</text>
+      <text x="14" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Quiz Option Generator</text>
+      <text x="14" y="106" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#CBD5E1">✓ 100% Offline Capability</text>
+    </g>
+
+    <!-- Multi-format Material Parser -->
+    <g transform="translate(16, 300)">
+      <rect width="218" height="85" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#F59E0B">Material Parser</text>
+      <text x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Raw Text &amp; Notes Ingestion</text>
+      <text x="14" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Markdown Section Slicing</text>
+      <text x="14" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Chapter Hierarchy Builder</text>
+    </g>
+
+    <!-- Cognitive Security Box -->
+    <g transform="translate(16, 400)">
+      <rect width="218" height="70" rx="10" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+      <text x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#CBD5E1">Zero Data Leakage</text>
+      <text x="14" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Direct client-to-API requests</text>
+      <text x="14" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400" fill="#94A3B8">• Zero intermediary servers</text>
+    </g>
+  </g>
+
+  <!-- Connectors from Layer 3 to Layer 4 -->
+  <line x1="900" y1="210" x2="950" y2="210" stroke="#06B6D4" stroke-width="2" class="flow-path"/>
+  <polygon points="950,210 942,206 942,214" fill="#06B6D4"/>
+  <line x1="900" y1="360" x2="950" y2="360" stroke="#EC4899" stroke-width="2" class="flow-path"/>
+  <polygon points="950,360 942,356 942,364" fill="#EC4899"/>
+
+  <!-- ==================== COLUMN 4: ACTIVE RECALL ENGINES ==================== -->
+  <g transform="translate(950, 100)">
+    <rect width="200" height="490" rx="14" fill="url(#cardBg)" stroke="#334155" stroke-width="1"/>
+    <rect x="14" y="16" width="172" height="34" rx="8" fill="#1E293B" stroke="#475569" stroke-width="0.8"/>
+    <text x="24" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#F8FAFC" letter-spacing="0.5">4. RECALL ENGINES</text>
+
+    <!-- Box 1: Spaced Repetition -->
+    <g transform="translate(14, 65)">
+      <rect width="172" height="90" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="12" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#E2E8F0">Spaced Repetition</text>
+      <text x="12" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="400" fill="#94A3B8">• Again / Hard / Good / Easy</text>
+      <text x="12" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="400" fill="#94A3B8">• Exponential intervals</text>
+      <text x="12" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="400" fill="#94A3B8">• Mastered state checks</text>
+    </g>
+
+    <!-- Box 2: Adaptive Quizzing -->
+    <g transform="translate(14, 170)">
+      <rect width="172" height="90" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="12" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#E2E8F0">Adaptive Quizzing</text>
+      <text x="12" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="400" fill="#94A3B8">• Real-time score counter</text>
+      <text x="12" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="400" fill="#94A3B8">• Detailed rationale breakdown</text>
+      <text x="12" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="400" fill="#94A3B8">• Assessment history</text>
+    </g>
+
+    <!-- Box 3: Pomodoro Focus Timer -->
+    <g transform="translate(14, 275)">
+      <rect width="172" height="90" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="12" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#E2E8F0">Pomodoro Engine</text>
+      <text x="12" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="400" fill="#94A3B8">• 25m Focus / 5m Short / 15m</text>
+      <text x="12" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="400" fill="#94A3B8">• Circular SVG ring tracking</text>
+      <text x="12" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="400" fill="#94A3B8">• Task Pomodoro linking</text>
+    </g>
+
+    <!-- Box 4: Analytics & Milestones -->
+    <g transform="translate(14, 380)">
+      <rect width="172" height="90" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="12" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#E2E8F0">Mastery Heatmap</text>
+      <text x="12" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="400" fill="#94A3B8">• Daily activity frequency</text>
+      <text x="12" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="400" fill="#94A3B8">• Domain mastery gauges</text>
+      <text x="12" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="400" fill="#94A3B8">• Unlockable milestones</text>
+    </g>
+  </g>
+</svg>

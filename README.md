@@ -17,9 +17,26 @@
 
 **Live Application Website:** [https://ai-study-buddy-sooty-seven.vercel.app](https://ai-study-buddy-sooty-seven.vercel.app)
 
-[Live App](https://ai-study-buddy-sooty-seven.vercel.app) • [Documentation & Slides](#project-documentation--presentation-suite) • [Features](#core-capabilities) • [Architecture](#system-architecture) • [Cognitive Loop](#cognitive-study-loop) • [Setup](#getting-started)
+[Live App](https://ai-study-buddy-sooty-seven.vercel.app) • [Open Presentation Deck](#direct-document--presentation-access) • [Features](#core-capabilities) • [Architecture](#system-architecture) • [Cognitive Loop](#cognitive-study-loop) • [Setup](#getting-started)
 
 </div>
+
+---
+
+## Direct Document & Presentation Access
+
+Click on any link below to open the presentation or documentation directly in your browser:
+
+| Document / Resource | Format | What It Contains | Direct One-Click Link |
+| :--- | :--- | :--- | :--- |
+| **Project Presentation (Web App)** | Interactive HTML | Complete 10-slide interactive presentation with keyboard navigation (`Arrow keys` / `Spacebar`) and dark theme. | **[Click to Open Live Presentation Deck](https://ai-study-buddy-sooty-seven.vercel.app/presentation.html)** |
+| **PowerPoint Online Viewer** | Microsoft Office Online | Official 10-slide PowerPoint presentation opened directly in PowerPoint for Web without downloading. | **[Click to Open in PowerPoint Online](https://view.officeapps.live.com/op/view.aspx?src=https://raw.githubusercontent.com/panchaksharayya12/AI-Study-Buddy/main/docs/AI_Study_Buddy_Project_Presentation.pptx)** |
+| **Presentation Slides (GitHub)** | Markdown (`.md`) | All 10 presentation slides formatted with cards, tables, and architecture diagrams directly on GitHub. | **[Click to View Presentation on GitHub](docs/PRESENTATION_SLIDES.md)** |
+| **Technical Project Report** | Markdown (`.md`) | In-depth engineering report: architectural tiers, state hydration, procedural audio design, and benchmarks. | **[Click to Read Technical Report](docs/TECHNICAL_PROJECT_REPORT.md)** |
+| **User Workflow Manual** | Markdown (`.md`) | Practical operational manual: document ingestion, Socratic prompt patterns, shortcuts, and heatmap analysis. | **[Click to Read User Workflow Manual](docs/USER_WORKFLOW_MANUAL.md)** |
+| **System Architecture Diagram** | Vector SVG | High-resolution architectural blueprint detailing Presentation, State Hub, AI Engine, and Recall Suites. | **[Click to View Architecture Diagram](assets/architecture-diagram.svg)** |
+| **Animated Hero Banner** | Vector SVG | Dynamic vector repository header with ambient glows, circuitry accents, and capability pills. | **[Click to View Animated Banner](assets/hero-banner.svg)** |
+| **Presentation Raw Download** | `.pptx` (16:9) | Downloadable standalone Microsoft PowerPoint `.pptx` file. | **[Download PPTX File](docs/AI_Study_Buddy_Project_Presentation.pptx)** |
 
 ---
 
@@ -31,21 +48,6 @@ The application is deployed and publicly accessible in production on Vercel:
 | :--- | :--- | :--- | :--- |
 | **Production Web Instance** | **[https://ai-study-buddy-sooty-seven.vercel.app](https://ai-study-buddy-sooty-seven.vercel.app)** | Verified Active (200 OK) | Public (Zero login required) |
 | **Source Repository** | **[https://github.com/panchaksharayya12/AI-Study-Buddy](https://github.com/panchaksharayya12/AI-Study-Buddy)** | Up to Date (main branch) | Open Source (MIT License) |
-
----
-
-## Project Documentation & Presentation Suite
-
-All project presentations, architectural specifications, technical evaluations, and user manuals are included directly in the repository:
-
-| Document / Asset | Format | Scope & Contents | Direct Link |
-| :--- | :--- | :--- | :--- |
-| **Project Presentation Report (PowerPoint)** | `.pptx` (16:9 Widescreen) | 10-slide executive presentation covering problem statement, solution overview, tech stack, feature deep-dives, and benchmarks. | **[Download Presentation Deck](docs/AI_Study_Buddy_Project_Presentation.pptx)** |
-| **Interactive Presentation Report (Web)** | `.html` (Self-Contained) | Standalone interactive slide deck with keyboard navigation (Arrow keys / Spacebar) and dark mode styling. | **[Open Slide Deck](docs/AI_Study_Buddy_Presentation_Report.html)** |
-| **Technical Project Report** | `.md` (Markdown) | Comprehensive technical specification: architecture tiers, state hydration, procedural audio design, and benchmarks. | **[Read Technical Report](docs/TECHNICAL_PROJECT_REPORT.md)** |
-| **User Workflow Manual** | `.md` (Markdown) | Practical operational manual: material ingestion, prompt patterns for Socratic dialogue, keyboard shortcuts, and heatmap analysis. | **[Read User Manual](docs/USER_WORKFLOW_MANUAL.md)** |
-| **System Architecture Diagram** | `.svg` (Vector Graphic) | High-resolution architectural blueprint detailing Presentation, Reactive State Hub, AI Engine, and Recall Suites. | **[View Architecture Diagram](assets/architecture-diagram.svg)** |
-| **Animated Hero Banner** | `.svg` (CSS Keyframes) | Dynamic vector repository header with ambient glows, circuitry accents, and feature pills. | **[View Animated Banner](assets/hero-banner.svg)** |
 
 ---
 
@@ -209,12 +211,15 @@ ai-study-buddy/
 │   ├── preview-hero.png                        # Screenshot of the unified hero view
 │   └── preview-dashboard.png                   # Screenshot of the dashboard overview
 ├── docs/                                       # Project documentation & presentation suite
+│   ├── PRESENTATION_SLIDES.md                  # Markdown presentation slides for direct GitHub viewing
 │   ├── AI_Study_Buddy_Project_Presentation.pptx # 10-Slide executive presentation deck
 │   ├── AI_Study_Buddy_Presentation_Report.html  # Self-contained interactive slide presentation
 │   ├── TECHNICAL_PROJECT_REPORT.md             # In-depth technical specification report
 │   ├── USER_WORKFLOW_MANUAL.md                 # Practical user guide and workflow manual
 │   └── generate-ppt.cjs                        # Script to rebuild presentation slides
 ├── public/
+│   ├── presentation.html                       # Web-hosted presentation deck on root URL
+│   ├── AI_Study_Buddy_Project_Presentation.pptx # Publicly accessible PPTX file
 │   └── logo.svg                                # Application brand icon
 ├── src/
 │   ├── components/

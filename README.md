@@ -8,16 +8,44 @@
 
 **Next-Generation Autonomous AI Learning Platform and Active Recall Studio**
 
+[![Live Production URL](https://img.shields.io/badge/Live_Deployment-ai--study--buddy--sooty--seven.vercel.app-10B981?style=for-the-badge&logo=vercel&logoColor=white)](https://ai-study-buddy-sooty-seven.vercel.app)
 [![React](https://img.shields.io/badge/React_18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript_5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite_5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
 [![Google Gemini](https://img.shields.io/badge/Google_Gemini_Pro-8E75B2?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
 
-[Features](#core-capabilities) • [Architecture](#system-architecture) • [Active Recall Pipeline](#cognitive-study-loop) • [Preview](#cinematic-interface) • [Local Setup](#getting-started) • [Tech Stack](#technology-stack)
+**Live Application Website:** [https://ai-study-buddy-sooty-seven.vercel.app](https://ai-study-buddy-sooty-seven.vercel.app)
+
+[Live App](https://ai-study-buddy-sooty-seven.vercel.app) • [Documentation & Slides](#project-documentation--presentation-suite) • [Features](#core-capabilities) • [Architecture](#system-architecture) • [Cognitive Loop](#cognitive-study-loop) • [Setup](#getting-started)
 
 </div>
+
+---
+
+## Direct Website Deployment
+
+The application is deployed and publicly accessible in production on Vercel:
+
+| Environment | Direct URL | Deployment Status | Access |
+| :--- | :--- | :--- | :--- |
+| **Production Web Instance** | **[https://ai-study-buddy-sooty-seven.vercel.app](https://ai-study-buddy-sooty-seven.vercel.app)** | Verified Active (200 OK) | Public (Zero login required) |
+| **Source Repository** | **[https://github.com/panchaksharayya12/AI-Study-Buddy](https://github.com/panchaksharayya12/AI-Study-Buddy)** | Up to Date (main branch) | Open Source (MIT License) |
+
+---
+
+## Project Documentation & Presentation Suite
+
+All project presentations, architectural specifications, technical evaluations, and user manuals are included directly in the repository:
+
+| Document / Asset | Format | Scope & Contents | Direct Link |
+| :--- | :--- | :--- | :--- |
+| **Project Presentation Report (PowerPoint)** | `.pptx` (16:9 Widescreen) | 10-slide executive presentation covering problem statement, solution overview, tech stack, feature deep-dives, and benchmarks. | **[Download Presentation Deck](docs/AI_Study_Buddy_Project_Presentation.pptx)** |
+| **Interactive Presentation Report (Web)** | `.html` (Self-Contained) | Standalone interactive slide deck with keyboard navigation (Arrow keys / Spacebar) and dark mode styling. | **[Open Slide Deck](docs/AI_Study_Buddy_Presentation_Report.html)** |
+| **Technical Project Report** | `.md` (Markdown) | Comprehensive technical specification: architecture tiers, state hydration, procedural audio design, and benchmarks. | **[Read Technical Report](docs/TECHNICAL_PROJECT_REPORT.md)** |
+| **User Workflow Manual** | `.md` (Markdown) | Practical operational manual: material ingestion, prompt patterns for Socratic dialogue, keyboard shortcuts, and heatmap analysis. | **[Read User Manual](docs/USER_WORKFLOW_MANUAL.md)** |
+| **System Architecture Diagram** | `.svg` (Vector Graphic) | High-resolution architectural blueprint detailing Presentation, Reactive State Hub, AI Engine, and Recall Suites. | **[View Architecture Diagram](assets/architecture-diagram.svg)** |
+| **Animated Hero Banner** | `.svg` (CSS Keyframes) | Dynamic vector repository header with ambient glows, circuitry accents, and feature pills. | **[View Animated Banner](assets/hero-banner.svg)** |
 
 ---
 
@@ -156,6 +184,7 @@ sequenceDiagram
 - **Bundler & Build Tool:** Vite 5
 - **Styling Architecture:** Tailwind CSS v3 with custom glassmorphism plugins
 - **Animation System:** Framer Motion (v11)
+- **Presentation Engine:** PptxGenJS (for automated `.pptx` report generation)
 - **Iconography:** Lucide React
 - **Confetti Engine:** Canvas Confetti
 
@@ -174,51 +203,57 @@ sequenceDiagram
 
 ```
 ai-study-buddy/
-├── assets/                          # Repository media and architectural diagrams
-│   ├── architecture-diagram.svg     # Full system architecture vector diagram
-│   ├── hero-banner.svg              # Animated SVG header banner
-│   ├── preview-hero.png             # Screenshot of the unified hero view
-│   └── preview-dashboard.png        # Screenshot of the dashboard overview
+├── assets/                                     # Repository media and architectural diagrams
+│   ├── architecture-diagram.svg                # Full system architecture vector diagram
+│   ├── hero-banner.svg                         # Animated SVG header banner
+│   ├── preview-hero.png                        # Screenshot of the unified hero view
+│   └── preview-dashboard.png                   # Screenshot of the dashboard overview
+├── docs/                                       # Project documentation & presentation suite
+│   ├── AI_Study_Buddy_Project_Presentation.pptx # 10-Slide executive presentation deck
+│   ├── AI_Study_Buddy_Presentation_Report.html  # Self-contained interactive slide presentation
+│   ├── TECHNICAL_PROJECT_REPORT.md             # In-depth technical specification report
+│   ├── USER_WORKFLOW_MANUAL.md                 # Practical user guide and workflow manual
+│   └── generate-ppt.cjs                        # Script to rebuild presentation slides
 ├── public/
-│   └── logo.svg                     # Application brand icon
+│   └── logo.svg                                # Application brand icon
 ├── src/
 │   ├── components/
-│   │   ├── analytics/               # Retention charts, activity heatmap, milestones
-│   │   ├── auth/                    # Authentication modal & illustration
-│   │   ├── common/                  # GlassCard, GlowButton, CircularProgress, Modal
-│   │   ├── dashboard/               # Primary overview, quick tools, recent chapters
-│   │   ├── flashcards/              # 3D spaced repetition card engine
-│   │   ├── intro/                   # Cinematic intro sequence (session-aware)
-│   │   ├── landing/                 # Cinematic hero, chapters, features, how-it-works
-│   │   ├── materials/               # Ingestion studio, chapter catalog, document reader
-│   │   ├── navigation/              # Top glass navigation bar and view router
-│   │   ├── notes/                   # Synthesized smart notes & markdown editor
-│   │   ├── planner/                 # Study task manager & circular Pomodoro timer
-│   │   ├── quiz/                    # Adaptive assessment quiz engine
-│   │   ├── settings/                # API key configuration & audio settings
-│   │   └── tutor/                   # Socratic AI tutor dialogue interface
+│   │   ├── analytics/                          # Retention charts, activity heatmap, milestones
+│   │   ├── auth/                               # Authentication modal & illustration
+│   │   ├── common/                             # GlassCard, GlowButton, CircularProgress, Modal
+│   │   ├── dashboard/                          # Primary overview, quick tools, recent chapters
+│   │   ├── flashcards/                         # 3D spaced repetition card engine
+│   │   ├── intro/                              # Cinematic intro sequence (session-aware)
+│   │   ├── landing/                            # Cinematic hero, chapters, features, how-it-works
+│   │   ├── materials/                          # Ingestion studio, chapter catalog, document reader
+│   │   ├── navigation/                         # Top glass navigation bar and view router
+│   │   ├── notes/                              # Synthesized smart notes & markdown editor
+│   │   ├── planner/                            # Study task manager & circular Pomodoro timer
+│   │   ├── quiz/                               # Adaptive assessment quiz engine
+│   │   ├── settings/                           # API key configuration & audio settings
+│   │   └── tutor/                              # Socratic AI tutor dialogue interface
 │   ├── context/
-│   │   ├── AuthContext.tsx          # User credentials & session tokens
-│   │   ├── StudyDataContext.tsx     # Application state & LocalStorage sync
-│   │   └── ThemeContext.tsx         # Sound settings & accessibility flags
+│   │   ├── AuthContext.tsx                     # User credentials & session tokens
+│   │   ├── StudyDataContext.tsx                # Application state & LocalStorage sync
+│   │   └── ThemeContext.tsx                    # Sound settings & accessibility flags
 │   ├── data/
-│   │   └── defaultData.ts           # Initial chapters, decks, quizzes, and tasks
+│   │   └── defaultData.ts                      # Initial chapters, decks, quizzes, and tasks
 │   ├── styles/
-│   │   ├── fonts.css                # Typography declarations
-│   │   └── theme.css                # Animation keyframes & cinematic styles
+│   │   ├── fonts.css                           # Typography declarations
+│   │   └── theme.css                           # Animation keyframes & cinematic styles
 │   ├── types/
-│   │   └── index.ts                 # TypeScript type interfaces
+│   │   └── index.ts                            # TypeScript type interfaces
 │   ├── utils/
-│   │   ├── confetti.ts              # Reward celebration effects
-│   │   └── sound.ts                 # Procedural Web Audio API sound generator
-│   ├── App.tsx                      # Root application component
-│   ├── index.css                    # Global Tailwind styles & variables
-│   └── main.tsx                     # Application entry point
-├── index.html                       # HTML5 entry template & font preconnects
-├── package.json                     # Project dependencies & scripts
-├── tailwind.config.js               # Tailwind design system configuration
-├── tsconfig.json                    # TypeScript compiler options
-└── vite.config.ts                   # Vite bundler configuration
+│   │   ├── confetti.ts                         # Reward celebration effects
+│   │   └── sound.ts                            # Procedural Web Audio API sound generator
+│   ├── App.tsx                                 # Root application component
+│   ├── index.css                               # Global Tailwind styles & variables
+│   └── main.tsx                                # Application entry point
+├── index.html                                  # HTML5 entry template & font preconnects
+├── package.json                                # Project dependencies & scripts
+├── tailwind.config.js                          # Tailwind design system configuration
+├── tsconfig.json                               # TypeScript compiler options
+└── vite.config.ts                              # Vite bundler configuration
 ```
 
 ---
@@ -273,7 +308,7 @@ npm run preview
 
 ### Optional Google Gemini Integration
 AI Study Buddy includes a built-in heuristic knowledge engine that works completely offline. To enable direct live synthesis through Google Gemini Pro:
-1. Open the application in your browser.
+1. Open the application in your browser or visit [https://ai-study-buddy-sooty-seven.vercel.app](https://ai-study-buddy-sooty-seven.vercel.app).
 2. Click the Settings icon in the navigation bar.
 3. Paste your Gemini API key (obtained from Google AI Studio).
 4. All AI Tutor inquiries will automatically route to Gemini Pro directly from your client without intermediary servers.

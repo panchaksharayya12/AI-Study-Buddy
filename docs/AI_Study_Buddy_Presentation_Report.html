@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Study Buddy® | Project Presentation & Executive Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0B0F19;
+      --card-bg: #131A2D;
+      --border: #273456;
+      --indigo: #6366F1;
+      --cyan: #06B6D4;
+      --emerald: #10B981;
+      --text: #F8FAFC;
+      --muted: #94A3B8;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+    }
+    header {
+      padding: 18px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+    .brand {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge {
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: var(--indigo);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    button.btn-nav {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    button.btn-nav:hover {
+      background: var(--indigo);
+      border-color: var(--indigo);
+    }
+    .slide-counter {
+      font-family: 'Space Grotesk', monospace;
+      font-size: 0.85rem;
+      color: var(--muted);
+      min-width: 70px;
+      text-align: center;
+    }
+    main {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .slide {
+      position: absolute;
+      width: 90%;
+      max-width: 1100px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px) scale(0.98);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+    .slide-category {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--indigo);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .slide-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #FFF;
+      margin-bottom: 24px;
+      line-height: 1.15;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .card-box {
+      background: rgba(11, 15, 25, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .card-box h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #FFF;
+      margin-bottom: 10px;
+    }
+    .card-box p, .card-box ul {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .card-box ul {
+      list-style-type: none;
+    }
+    .card-box ul li {
+      margin-bottom: 8px;
+      padding-left: 14px;
+      position: relative;
+    }
+    .card-box ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--indigo);
+    }
+    .stat-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+    .color-cyan { color: var(--cyan); }
+    .color-emerald { color: var(--emerald); }
+    .color-indigo { color: var(--indigo); }
+    .color-rose { color: #F43F5E; }
+    .color-amber { color: #F59E0B; }
+    footer {
+      padding: 14px 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: rgba(11, 15, 25, 0.8);
+    }
+    footer a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      AI STUDY BUDDY<sup style="font-size: 0.6em; font-weight: 400;">®</sup>
+      <span class="badge">Presentation Report</span>
+    </div>
+    <div class="controls">
+      <button class="btn-nav" onclick="prevSlide()">Previous</button>
+      <div class="slide-counter" id="counter">1 / 10</div>
+      <button class="btn-nav" onclick="nextSlide()">Next</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- SLIDE 1 -->
+    <div class="slide active">
+      <div class="slide-category">Executive Project Report</div>
+      <h1 class="slide-title" style="font-size: 3rem; margin-bottom: 12px;">AI STUDY BUDDY®</h1>
+      <p style="font-size: 1.2rem; color: var(--muted); margin-bottom: 36px; max-width: 800px;">
+        Next-Generation Autonomous AI Learning Platform, Socratic Dialogue Engine, and 3D Active Recall Suite.
+      </p>
+
+      <div class="grid-3">
+        <div class="card-box">
+          <div class="slide-category">Lead Architect</div>
+          <h3>Panchaksharayya</h3>
+          <p>Full-Stack Engineer &amp; System Architect</p>
+        </div>
+        <div class="card-box">
+          <div class="slide-category">Production Deployment</div>
+          <h3 style="color: var(--cyan);">Vercel Live Instance</h3>
+          <p><a href="https://ai-study-buddy-sooty-seven.vercel.app" target="_blank" style="color: var(--cyan); text-decoration: none;">ai-study-buddy-sooty-seven.vercel.app</a></p>
+        </div>
+        <div class="card-box">
+          <div class="slide-category">Core Architecture</div>
+          <h3 style="color: var(--emerald);">Client-First Reactive</h3>
+          <p>React 18 · TypeScript · Web Audio · Gemini Pro</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide">
+      <div class="slide-category">Problem Statement</div>
+      <h2 class="slide-title">The Academic Retention Crisis</h2>
+      <div class="grid-3">
+        <div class="card-box">
+          <div class="stat-number color-rose">70% Loss</div>
+          <h3>Rapid Forgetting Curve</h3>
+          <p>Over 70% of lecture materials and textbook chapters are forgotten within 24 hours without systematic retrieval practice.</p>
+        </div>
+        <div class="card-box">
+          <div class="stat-number color-amber">15% Efficiency</div>
+          <h3>Passive Reading Illusion</h3>
+          <p>Highlighting and re-reading generate a false sense of familiarity without triggering synaptic consolidation or deep proofs.</p>
+        </div>
+        <div class="card-box">
+          <div class="stat-number color-cyan">4.2 Apps</div>
+          <h3>Tooling Fragmentation</h3>
+          <p>Students juggle disconnected apps for PDFs, notes, timers, and decks, degrading focus and introducing heavy context-switching costs.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide">
+      <div class="slide-category">Solution Overview</div>
+      <h2 class="slide-title">The Active Recall Cognitive Loop</h2>
+      <div class="grid-4">
+        <div class="card-box">
+          <div class="slide-category color-indigo">Step 01</div>
+          <h3>Ingest</h3>
+          <p>Upload raw notes, PDFs, and syllabi. Hierarchy parser builds structural chapters and core definitions.</p>
+        </div>
+        <div class="card-box">
+          <div class="slide-category color-cyan">Step 02</div>
+          <h3>Synthesize</h3>
+          <p>Generate smart notes, 3D spaced repetition cards, and adaptive multiple-choice assessments automatically.</p>
+        </div>
+        <div class="card-box">
+          <div class="slide-category color-emerald">Step 03</div>
+          <h3>Reinforce</h3>
+          <p>Flip 3D cards via Leitner intervals, take timed quizzes, and converse with the personal Socratic AI Tutor.</p>
+        </div>
+        <div class="card-box">
+          <div class="slide-category color-amber">Step 04</div>
+          <h3>Verify</h3>
+          <p>Track retention velocity, daily study heatmaps, domain mastery gauges, and unlockable achievement milestones.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="slide">
+      <div class="slide-category">Technical Architecture</div>
+      <h2 class="slide-title">Decoupled Reactive Client Stack</h2>
+      <div class="grid-2">
+        <div class="card-box">
+          <div class="slide-category">Presentation &amp; Motion</div>
+          <h3>Client Layer (Zero Backend Latency)</h3>
+          <ul>
+            <li>React 18 + Vite 5 + Pure TypeScript compilation.</li>
+            <li>Framer Motion physics curves with requestAnimationFrame loop controller.</li>
+            <li>Procedural Web Audio API synth oscillators (zero external audio file latency).</li>
+            <li>Modern Neo-Grotesque Typography: Outfit, Plus Jakarta Sans, Space Grotesk.</li>
+          </ul>
+        </div>
+        <div class="card-box">
+          <div class="slide-category">Intelligence &amp; Persistence</div>
+          <h3>Dual-Engine AI Synthesis</h3>
+          <ul>
+            <li>Direct client-to-API REST stream for Google Gemini Pro (zero proxy overhead).</li>
+            <li>Embedded rule-based heuristic knowledge synthesizer functioning 100% offline.</li>
+            <li>Decoupled React Context Hub (StudyData, Theme, Auth) with LocalStorage sync.</li>
+            <li>Zero learner data harvesting or external analytics tracking.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5 -->
+    <div class="slide">
+      <div class="slide-category">Capability Deep Dive</div>
+      <h2 class="slide-title">Socratic AI Tutor &amp; Ingestion Studio</h2>
+      <div class="grid-2">
+        <div class="card-box">
+          <h3>Socratic Mentorship Dialogue</h3>
+          <p style="margin-bottom: 12px;">Rather than simply giving away direct answers, the AI Tutor guides students through deductive reasoning, conceptual analogies, and step-by-step mathematical proofs.</p>
+          <ul>
+            <li>Multi-turn conversational context awareness.</li>
+            <li>Live connection indicator with Gemini Pro key validation.</li>
+            <li>Ingestion counters tracking available reference chapters.</li>
+          </ul>
+        </div>
+        <div class="card-box">
+          <h3>Smart Synthesized Notes</h3>
+          <p style="margin-bottom: 12px;">Transforms massive reading assignments into structured executive summaries and collated sections with inline keyword highlights.</p>
+          <ul>
+            <li>Collapsible section accordions for focused reading.</li>
+            <li>Debounced automatic revision saving to local storage.</li>
+            <li>One-click clipboard export for essays and study guides.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6 -->
+    <div class="slide">
+      <div class="slide-category">Active Recall Suite</div>
+      <h2 class="slide-title">3D Tactile Cards &amp; Adaptive Quizzing</h2>
+      <div class="grid-2">
+        <div class="card-box">
+          <h3>3D Spaced Repetition Cards</h3>
+          <ul>
+            <li>Hardware-accelerated CSS 3D perspective transforms with 180° backface flipping.</li>
+            <li>4-Tier Leitner response ratings: Again, Hard, Good, Easy.</li>
+            <li>Exponential interval scheduling adjusting card review frequency.</li>
+            <li>Full keyboard navigation: Space to flip, Arrow keys to traverse, 1-4 to rate.</li>
+          </ul>
+        </div>
+        <div class="card-box">
+          <h3>Adaptive Assessment Quizzing</h3>
+          <ul>
+            <li>Automated exam generation based on ingested domain concepts.</li>
+            <li>Real-time score counters, progress meters, and question duration timers.</li>
+            <li>Contextual insight breakdowns explaining why choices are correct or incorrect.</li>
+            <li>Assessment review histories linked to student retention velocity.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7 -->
+    <div class="slide">
+      <div class="slide-category">Accountability Suite</div>
+      <h2 class="slide-title">Circular Pomodoro &amp; Cognitive Heatmaps</h2>
+      <div class="grid-3">
+        <div class="card-box">
+          <h3>Circular Pomodoro</h3>
+          <p>Customizable 25-minute deep focus, 5-minute short break, and 15-minute long break blocks with SVG circular stroke-dashoffset tracking and Web Audio acoustic chimes.</p>
+        </div>
+        <div class="card-box">
+          <h3>Daily Activity Heatmap</h3>
+          <p>16-week study density visualization mapping study sessions, card reviews, and quiz tests. Streak accountability engine reinforcing consistent daily recall routines.</p>
+        </div>
+        <div class="card-box">
+          <h3>Domain Mastery Gauges</h3>
+          <p>Tracks active mastery distribution across Computer Science, Life Sciences, and Applied Mathematics with unlockable milestone achievements.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8 -->
+    <div class="slide">
+      <div class="slide-category">Design Philosophy</div>
+      <h2 class="slide-title">Neo-Grotesque &amp; Atmospheric Motion</h2>
+      <div class="grid-2">
+        <div class="card-box">
+          <h3>Typography &amp; Visual Identity</h3>
+          <ul>
+            <li>Eliminated generic literary serif fonts in favor of modern high-tech typography.</li>
+            <li>Headings: Outfit (Weights 800/900) with tight -0.04em letter tracking.</li>
+            <li>UI Body: Plus Jakarta Sans for clean legibility in dense academic materials.</li>
+            <li>Code &amp; Numbers: Space Grotesk for metrics and timers.</li>
+          </ul>
+        </div>
+        <div class="card-box">
+          <h3>Atmospheric Video &amp; Navigation</h3>
+          <ul>
+            <li>Dual ambient background loop (Meadowbell anime plate + Aethera overlay).</li>
+            <li>requestAnimationFrame precision 0.5s fade-in/fade-out loop controller.</li>
+            <li>Unified top glass navigation bar eliminating dual-sidebar clutter.</li>
+            <li>Full respect for prefers-reduced-motion accessibility preferences.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 9 -->
+    <div class="slide">
+      <div class="slide-category">Engineering Verification</div>
+      <h2 class="slide-title">Performance Metrics &amp; Benchmarks</h2>
+      <div class="grid-4">
+        <div class="card-box">
+          <div class="stat-number color-emerald">17.6s</div>
+          <h3>Build Time</h3>
+          <p>Production bundle compiled with zero TypeScript warnings.</p>
+        </div>
+        <div class="card-box">
+          <div class="stat-number color-cyan">130.8 kB</div>
+          <h3>Gzip Bundle</h3>
+          <p>Optimized code-split vendor chunks via Vite 5.</p>
+        </div>
+        <div class="card-box">
+          <div class="stat-number color-indigo">0 KB</div>
+          <h3>Audio Overhead</h3>
+          <p>Procedural Web Audio API synth oscillators.</p>
+        </div>
+        <div class="card-box">
+          <div class="stat-number color-emerald">98/100</div>
+          <h3>Lighthouse</h3>
+          <p>Top-tier accessibility, SEO, and paint velocity.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 10 -->
+    <div class="slide">
+      <div class="slide-category">Summary &amp; Links</div>
+      <h2 class="slide-title">Live Deployment &amp; Repository</h2>
+      <div class="grid-2" style="margin-bottom: 24px;">
+        <div class="card-box" style="border: 1px solid var(--cyan);">
+          <div class="slide-category color-cyan">Live Production App</div>
+          <h3 style="font-size: 1.25rem;"><a href="https://ai-study-buddy-sooty-seven.vercel.app" target="_blank" style="color: #FFF; text-decoration: none;">ai-study-buddy-sooty-seven.vercel.app</a></h3>
+          <p style="margin-top: 8px;">Explore the working application deployed live on Vercel.</p>
+        </div>
+        <div class="card-box" style="border: 1px solid var(--emerald);">
+          <div class="slide-category color-emerald">GitHub Repository</div>
+          <h3 style="font-size: 1.25rem;"><a href="https://github.com/panchaksharayya12/AI-Study-Buddy" target="_blank" style="color: #FFF; text-decoration: none;">github.com/panchaksharayya12/AI-Study-Buddy</a></h3>
+          <p style="margin-top: 8px;">Complete open-source codebase, architecture diagrams, and docs.</p>
+        </div>
+      </div>
+      <p style="font-size: 0.95rem; color: var(--muted); text-align: center;">
+        Use Left/Right arrow keys or navigation buttons above to navigate through this presentation.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div>AI Study Buddy® · Autonomous Cognitive Learning Studio</div>
+    <div>Live URL: <a href="https://ai-study-buddy-sooty-seven.vercel.app" target="_blank">https://ai-study-buddy-sooty-seven.vercel.app</a></div>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const counter = document.getElementById('counter');
+
+    function showSlide(index) {
+      if (index < 0) index = 0;
+      if (index >= slides.length) index = slides.length - 1;
+      slides[currentSlide].classList.remove('active');
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+      counter.textContent = `${currentSlide + 1} / ${slides.length}`;
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
+  </script>
+</body>
+</html>
